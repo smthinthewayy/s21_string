@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -std=c11
 GCOVFLAGS:=-fprofile-arcs -ftest-coverage
-LDFLAGS:=-lcheck -lgcov -fprofile-arcs --coverage
+LDFLAGS:=-lcheck -fprofile-arcs --coverage
 ifeq ($(shell uname), Linux)
 LDFLAGS +=-pthread -lcheck_pic -lrt -lm -lsubunit
 endif
