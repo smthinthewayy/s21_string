@@ -30,8 +30,8 @@ test: gcov_obj/s21_string_test.o s21_string_gcov.a
 	./test
 
 gcov_report: test
-	lcov/bin/./lcov -c -d gcov_obj/. -o gcov_obj/coverage.info
-	lcov/bin/./genhtml gcov_obj/coverage.info --output-directory out
+	lcov -c -d gcov_obj/. -o gcov_obj/coverage.info
+	genhtml gcov_obj/coverage.info --output-directory out
 
 gcov_obj/%.o: %.c
 	$(CC) $(CFLAGS) $(GCOVFLAGS) -c $< -o $@
